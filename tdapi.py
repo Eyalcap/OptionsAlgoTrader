@@ -67,7 +67,7 @@ def getWatchlists():
     return [(x['name'], x['watchlistId']) for x in watchlists.json()]
 
 def getScreenedList():
-    r = requests.get('https://financialmodelingprep.com/api/v3/stock-screener?volumeMoreThan=1000000&apikey=e16bc46ed4ae615380404c8efe59b4ca')
+    r = requests.get('https://financialmodelingprep.com/api/v3/stock-screener?volumeMoreThan=1000000&apikey=e16bc46ed4ae615380404c8efe59b4ca', timeout=60)
     filtered = []
     quotelist = []
     for item in r.json():
